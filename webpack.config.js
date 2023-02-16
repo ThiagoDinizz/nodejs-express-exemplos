@@ -1,3 +1,5 @@
+/// conf do webpack
+
 const path = require('path')
 const NodemonPlugin = require('nodemon-webpack-plugin')
 const nodeExternals = require('webpack-node-externals')
