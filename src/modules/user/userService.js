@@ -1,10 +1,10 @@
-import {sign} from 'jsonwebtoken'
-
+import { sign } from "jsonwebtoken"
+import { generateAccessToken } from "../../utils/auth"
 let users = []
 
-const generateAccessToken = (data) => sign(data, 'secret')
+///const generateAccessToken = (data) => sign(data, 'secret')
 
-const getUSerByEmail = (serchEmail)  => users.find(({email})=> email === serchEmail)
+const getUSerByEmail = (serchEmail) => users.find((obj)=> obj.email === serchEmail)
 
 export const signup = (data) =>{
   if(getUSerByEmail(data.email)) throw new Error('email_existente')
@@ -17,7 +17,7 @@ export const login = (data)=> {
   const user = getUSerByEmail(data.email)
   if (!user) throw new Error('email_nao_encontrado')
 
-  if(user.password !== data.password) throw new Error('senha_inconrreta')
+  if(user.password !== data.password) throw new Error('senha_incorreta')
 
   return generateAccessToken ({email: data.email})
 }
