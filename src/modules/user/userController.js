@@ -1,5 +1,4 @@
 import { Router } from 'express'
-
 import { signup, login } from './userService'
 
 const AUTH_COOKIE_NAME = 'authorization'

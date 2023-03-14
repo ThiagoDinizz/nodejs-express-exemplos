@@ -1,4 +1,4 @@
-import {sign} from 'jsonwebtoken'
+import {sign, verify} from 'jsonwebtoken'
 
 const AUTH_SECRET = 'secret'
 

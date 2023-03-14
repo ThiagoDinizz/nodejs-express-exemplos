@@ -1,8 +1,6 @@
-import { sign } from "jsonwebtoken"
 import { generateAccessToken } from "../../utils/auth"
-let users = []
 
-///const generateAccessToken = (data) => sign(data, 'secret')
+let users = []
 
 const getUSerByEmail = (serchEmail) => users.find((obj)=> obj.email === serchEmail)
 
